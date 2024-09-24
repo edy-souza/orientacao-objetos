@@ -1,16 +1,14 @@
 # Criando as classe do restaurante
 class Restaurante:
-    nome = ''
-    categoria = ''
-    ativo = False
+    def __init__ (self, nome, categoria):
+        self.nome = nome
+        self.categoria = categoria
+        self.ativo = False
 
 # instanciando uma classe com seu objeto    
-restaurante_praca = Restaurante()
-restaurante_praca.nome = 'Praça'
-restaurante_praca.categoria = 'Gourmet'
-restaurante_praca.ativo = False
+restaurante_praca = Restaurante('Praça' , 'Gourmet')
+restaurante_pizza = Restaurante('Pizza Express' , 'Italiano')
 
-
-restaurante_pizza = Restaurante()
 restarantes = [restaurante_pizza , restaurante_pizza]
-print(restarantes)
+print(restaurante_pizza)
+print(restaurante_praca)
