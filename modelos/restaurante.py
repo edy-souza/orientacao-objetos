@@ -1,3 +1,5 @@
+from modelos.avaliacao import Avaliacao
+
 # Criando as classe do restaurante
 class Restaurante: # por padrão o nome da classe inicia com letra Maiúscula
     restaurantes = []
@@ -6,6 +8,7 @@ class Restaurante: # por padrão o nome da classe inicia com letra Maiúscula
         self._nome = nome.title()  # Transforma a primeira letra em Maiúscula.
         self._categoria = categoria.upper()
         self._ativo = False
+        self._avaliacao = []
         Restaurante.restaurantes.append(self) #adiciona restaurante na lista restauranteS
         
     def __str__(self):
@@ -24,10 +27,9 @@ class Restaurante: # por padrão o nome da classe inicia com letra Maiúscula
     
     def alternar_estado(self):
         self._ativo = not self._ativo
+    
+    def recber_avaliacao(self, cliente, nota):
+        avaliacao = Avaliacao(cliente, nota) 
+        self._avaliacao.append(avaliacao)
+        
        
-# instanciando uma classe com seu objeto    
-restaurante_praca = Restaurante('praça' , 'Gourmet')
-restaurante_praca.alternar_estado()
-restaurante_pizza = Restaurante('pizza Express' , 'Italiano')
-
-Restaurante.listar_restaurantes()
